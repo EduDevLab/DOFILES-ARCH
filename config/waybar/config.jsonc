@@ -1,0 +1,130 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 38,
+    "margin-top": 8,
+    "margin-left": 12,
+    "margin-right": 12,
+    "spacing": 6,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "cpu",
+        "memory",
+        "battery",
+        "tray"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "active-only": false,
+        "on-click": "activate",
+        "format": "{id}"
+    },
+
+    "hyprland/window": {
+        "format": "󰣆  {title}",
+        "max-length": 35,
+        "separate-outputs": true,
+        "rewrite": {
+            "": "Linterna Verde"
+        }
+    },
+
+    "clock": {
+        "interval": 1,
+        "format": "󰥔 {:%I:%M %p}",
+        "format-alt": "󰸗 {:%A, %d de %B de %Y - %I:%M:%S %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#19FF76'><b>{}</b></span>",
+                "days": "<span color='#E2F4E9'><b>{}</b></span>",
+                "weeks": "<span color='#139960'><b>W{}</b></span>",
+                "weekdays": "<span color='#19FF76'><b>{}</b></span>",
+                "today": "<span color='#050B07' background='#19FF76'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Mute",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 5,
+        "on-click": "pwvucontrol || pavucontrol"
+    },
+
+    "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-disabled": "󰂲 Off",
+        "format-off": "󰂲 Off",
+        "format-on": "󰂯 On",
+        "format-connected": "󰂱 {device_alias}",
+        "format-connected-battery": "󰂱 {device_alias} ({device_battery_percentage}%)",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} conectados",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} conectados\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t({device_battery_percentage}%)",
+        "on-click": "blueman-manager || overskride || kitty -e bluetoothctl"
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "format-linked": "󰈀 (Sin IP)",
+        "format-disconnected": "󰖪 Off",
+        "tooltip-format-wifi": "󰖩 {essid} ({signalStrength}%)\n⇣ {bandwidthDownBytes}  ⇡ {bandwidthUpBytes}",
+        "tooltip-format-ethernet": "󰈀 {ifname}: {ipaddr}\n⇣ {bandwidthDownBytes}  ⇡ {bandwidthUpBytes}",
+        "on-click": "kitty -e nmtui"
+    },
+
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "tooltip": true
+    },
+
+    "memory": {
+        "interval": 3,
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "RAM en uso: {used:0.1f}GiB / {total:0.1f}GiB"
+    },
+
+    "battery": {
+        "states": {
+            "good": 85,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    }
+}

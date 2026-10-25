@@ -1,0 +1,10 @@
+# ==============================================================================
+# MATUGEN CONFIGURATION
+# Hooks into ~/.config/hypr/scripts/palette_gen.py for unified dynamic theming
+# ==============================================================================
+
+[config]
+reload_apps = false
+
+[templates]
+Raw_Nop = { input_path = "~/.config/matugen/config.toml", output_path = "/tmp/matugen_last_run", post_hook = "python3 ~/.config/hypr/scripts/palette_gen.py {{image}}" }

@@ -1,0 +1,8 @@
+# ==============================================================================
+# YAZI KEYMAP CONFIGURATION (Yazi 26.x Schema)
+# ==============================================================================
+
+[[mgr.prepend_keymap]]
+on   = "o"
+run  = "open --interactive"
+desc = "Abrir con selector de opciones (Neovim / VS Code)"

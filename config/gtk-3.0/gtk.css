@@ -1,0 +1,21 @@
+@define-color accent_color #19FF76;
+@define-color accent_fg_color #050B07;
+@define-color accent_bg_color #19FF76;
+@define-color window_bg_color #050B07;
+@define-color window_fg_color #E2F4E9;
+@define-color headerbar_bg_color #0B160F;
+@define-color headerbar_fg_color #E2F4E9;
+@define-color popover_bg_color #0B160F;
+@define-color popover_fg_color #E2F4E9;
+@define-color view_bg_color #050B07;
+@define-color view_fg_color #E2F4E9;
+@define-color card_bg_color #0B160F;
+@define-color card_fg_color #E2F4E9;
+@define-color sidebar_bg_color @window_bg_color;
+@define-color sidebar_fg_color @window_fg_color;
+@define-color sidebar_border_color @window_bg_color;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color theme_selected_bg_color alpha(@accent_color, 0.15);
+@define-color theme_selected_fg_color @accent_color;
+
+@import "thunar.css";

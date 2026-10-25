@@ -1,0 +1,137 @@
+# ==============================================================================
+# YAZI DYNAMIC THEME (Auto-generated from Wallpaper - Yazi 26.x Schema)
+# ==============================================================================
+
+[mgr]
+cwd = { fg = "#19FF76", bold = true }
+
+find_keyword  = { fg = "#FFAA33", bold = true, italic = true, underline = true }
+find_position = { fg = "#29F9D1", bg = "reset", bold = true, italic = true }
+
+symlink_target = { fg = "#29F9D1", italic = true }
+
+marker_copied   = { fg = "#80E09E", bg = "#80E09E" }
+marker_cut      = { fg = "#FF5555", bg = "#FF5555" }
+marker_marked   = { fg = "#29F9D1", bg = "#29F9D1" }
+marker_selected = { fg = "#19FF76", bg = "#19FF76" }
+marker_symbol   = "│"
+
+count_copied   = { fg = "#050B07", bg = "#80E09E" }
+count_cut      = { fg = "#050B07", bg = "#FF5555" }
+count_selected = { fg = "#050B07", bg = "#19FF76" }
+
+border_symbol = "│"
+border_style  = { fg = "#159355" }
+
+[tabs]
+active    = { fg = "#050B07", bg = "#19FF76", bold = true }
+inactive  = { fg = "#839E8E", bg = "#112619" }
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+[mode]
+normal_main = { fg = "#050B07", bg = "#19FF76", bold = true }
+normal_alt  = { fg = "#19FF76", bg = "#112619" }
+
+select_main = { fg = "#050B07", bg = "#29F9D1", bold = true }
+select_alt  = { fg = "#29F9D1", bg = "#112619" }
+
+unset_main  = { fg = "#050B07", bg = "#FFAA33", bold = true }
+unset_alt   = { fg = "#FFAA33", bg = "#112619" }
+
+[indicator]
+parent  = { fg = "#050B07", bg = "#139960", bold = true }
+current = { fg = "#050B07", bg = "#19FF76", bold = true }
+preview = { underline = true }
+padding = { open = "", close = "" }
+
+[status]
+overall   = { bg = "#0B160F" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+perm_sep   = { fg = "#839E8E" }
+perm_type  = { fg = "#19FF76" }
+perm_read  = { fg = "#BBF9B7" }
+perm_write = { fg = "#FF5555" }
+perm_exec  = { fg = "#29F9D1" }
+
+progress_label  = { fg = "#E2F4E9", bold = true }
+progress_normal = { fg = "#19FF76", bg = "#112619" }
+progress_error  = { fg = "#FF5555", bg = "#112619" }
+
+[which]
+border          = { fg = "#19FF76" }
+cols            = 3
+mask            = { bg = "#0B160F" }
+cand            = { fg = "#19FF76", bold = true }
+rest            = { fg = "#839E8E" }
+desc            = { fg = "#80E09E" }
+separator       = "  "
+separator_style = { fg = "#577262" }
+
+[confirm]
+border     = { fg = "#19FF76" }
+title      = { fg = "#19FF76", bold = true }
+body       = { fg = "#E2F4E9" }
+list       = { fg = "#E2F4E9" }
+btn_yes    = { fg = "#050B07", bg = "#19FF76", bold = true }
+btn_no     = { fg = "#E2F4E9", bg = "#112619" }
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+[spot]
+border   = { fg = "#19FF76" }
+title    = { fg = "#19FF76", bold = true }
+tbl_col  = { fg = "#29F9D1" }
+tbl_cell = { fg = "#050B07", bg = "#19FF76", bold = true }
+
+[notify]
+title_info  = { fg = "#19FF76" }
+title_warn  = { fg = "#FFAA33" }
+title_error = { fg = "#FF5555" }
+icon_info   = ""
+icon_warn   = ""
+icon_error  = ""
+
+[pick]
+border   = { fg = "#19FF76" }
+active   = { fg = "#19FF76", bold = true }
+inactive = { fg = "#E2F4E9" }
+
+[input]
+border   = { fg = "#19FF76" }
+title    = { fg = "#19FF76", bold = true }
+value    = { fg = "#E2F4E9" }
+selected = { reversed = true }
+
+[cmp]
+border       = { fg = "#19FF76" }
+active       = { fg = "#050B07", bg = "#19FF76", bold = true }
+inactive     = { fg = "#E2F4E9" }
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+[tasks]
+border  = { fg = "#19FF76" }
+title   = { fg = "#19FF76", bold = true }
+hovered = { fg = "#19FF76", bold = true, underline = true }
+
+[help]
+border  = { fg = "#19FF76" }
+chord   = { fg = "#19FF76", bold = true }
+action  = { fg = "#E2F4E9" }
+hovered = { fg = "#050B07", bg = "#19FF76", bold = true }
+
+[filetype]
+rules = [
+    { mime = "**/image/*", fg = "#29F9D1" },
+    { mime = "**/{audio,video}/*", fg = "#BBF9B7" },
+    { mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#FFAA33" },
+    { mime = "**/application/{pdf,doc,rtf}", fg = "#80E09E" },
+    { mime = "vfs/{absent,stale}", fg = "#839E8E" },
+    { url = "*", is = "orphan", fg = "#FF5555" },
+    { url = "*", is = "exec", fg = "#19FF76", bold = true },
+    { url = "*/", fg = "#19FF76", bold = true },
+    { url = "*", fg = "#E2F4E9" },
+]

@@ -1,0 +1,26 @@
+/* ==============================================================================
+   WAYBAR DYNAMIC COLORS (Auto-generated from Wallpaper)
+   ============================================================================== */
+@define-color bg_main rgba(5, 11, 7, 0.82);
+@define-color bg_tooltip rgba(11, 22, 15, 0.95);
+@define-color bg_workspaces rgba(17, 38, 25, 0.45);
+@define-color bg_window rgba(17, 38, 25, 0.4);
+@define-color bg_clock rgba(17, 38, 25, 0.6);
+@define-color bg_module rgba(17, 38, 25, 0.5);
+@define-color bg_hover rgba(14, 76, 39, 0.65);
+
+@define-color border_subtle rgba(25, 255, 118, 0.25);
+@define-color border_clock rgba(25, 255, 118, 0.35);
+@define-color glow_active rgba(25, 255, 118, 0.55);
+@define-color glow_hover rgba(25, 255, 118, 0.3);
+
+@define-color fg_main #E2F4E9;
+@define-color fg_dim #839E8E;
+@define-color fg_dark #050B07;
+@define-color primary #19FF76;
+@define-color secondary #139960;
+@define-color tertiary #2FF2D9;
+@define-color mint #80E09E;
+@define-color lime #93F4A1;
+@define-color teal #29F9D1;
+@define-color error #FF5555;

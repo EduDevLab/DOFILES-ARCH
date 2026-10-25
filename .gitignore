@@ -1,0 +1,11 @@
+# OS & Editor temporary files
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Neovim plugin lock or local state if undesired (keep lazy-lock.json tracked)
+config/nvim/.neoconf.json
+
+# Compiled binary (compiled automatically on demand by install.sh)
+config/hypr/scripts/wal-video

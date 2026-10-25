@@ -1,0 +1,218 @@
+/* ==============================================================================
+   WAYBAR STYLE - ESTÉTICA DINÁMICA BASADA EN EL WALLPAPER (FLOTANTE & MINIMALISTA)
+   ============================================================================== */
+
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    min-height: 0;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra flotante principal */
+window#waybar {
+    background-color: @bg_main;
+    border: 1px solid @border_subtle;
+    border-radius: 12px;
+    color: @fg_main;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* Tooltip emergente */
+tooltip {
+    background: @bg_tooltip;
+    border: 1px solid @primary;
+    border-radius: 8px;
+    color: @fg_main;
+}
+
+tooltip label {
+    padding: 6px;
+    color: @fg_main;
+}
+
+/* --- Espacios de Trabajo (Workspaces) --- */
+#workspaces {
+    background-color: @bg_workspaces;
+    border: 1px solid @border_subtle;
+    border-radius: 8px;
+    margin: 4px 6px;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 2px 8px;
+    margin: 2px;
+    color: @fg_dim;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: @bg_hover;
+    color: @primary;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @primary, @secondary);
+    color: @fg_dark;
+    font-weight: 800;
+    box-shadow: 0 0 10px @glow_active;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+    color: #FFFFFF;
+}
+
+/* --- Título de Ventana Activa --- */
+#window {
+    background-color: @bg_window;
+    border: 1px solid @border_subtle;
+    border-radius: 8px;
+    margin: 4px 6px;
+    padding: 2px 12px;
+    color: @mint;
+}
+
+/* --- Reloj Central --- */
+#clock {
+    background-color: @bg_clock;
+    border: 1px solid @border_clock;
+    border-radius: 8px;
+    margin: 4px 0;
+    padding: 2px 14px;
+    color: @primary;
+    text-shadow: 0 0 6px @glow_hover;
+    font-size: 13.5px;
+}
+
+/* --- Módulos Laterales Derechos (Pills Minimalistas) --- */
+#pulseaudio,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#battery,
+#tray {
+    background-color: @bg_module;
+    border: 1px solid @border_subtle;
+    border-radius: 8px;
+    margin: 4px 3px;
+    padding: 2px 10px;
+    color: @fg_main;
+    transition: all 0.2s ease;
+}
+
+#pulseaudio:hover,
+#bluetooth:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover {
+    background-color: @bg_hover;
+    border-color: @primary;
+    color: @primary;
+    box-shadow: 0 0 8px @glow_hover;
+}
+
+/* Iconos y Acentos específicos */
+#pulseaudio {
+    color: @primary;
+}
+
+#pulseaudio.muted {
+    background-color: rgba(30, 20, 20, 0.5);
+    border-color: rgba(255, 85, 85, 0.3);
+    color: #FF7777;
+}
+
+#bluetooth {
+    color: @teal;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    background-color: rgba(25, 20, 20, 0.4);
+    border-color: rgba(120, 150, 130, 0.2);
+    color: @fg_dim;
+}
+
+#bluetooth.connected {
+    color: @primary;
+    border-color: @primary;
+    box-shadow: 0 0 6px @glow_hover;
+}
+
+#network {
+    color: @mint;
+}
+
+#network.disconnected {
+    background-color: rgba(30, 20, 20, 0.5);
+    border-color: rgba(255, 85, 85, 0.3);
+    color: #FF7777;
+}
+
+#cpu {
+    color: @primary;
+}
+
+#memory {
+    color: @lime;
+}
+
+#battery {
+    color: @primary;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @primary;
+    background-color: @bg_hover;
+    border-color: @primary;
+}
+
+#battery.critical:not(.charging) {
+    background-color: rgba(60, 15, 15, 0.7);
+    border-color: #FF4444;
+    color: @error;
+    animation-name: blink;
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #FF2222;
+        color: #FFFFFF;
+    }
+}
+
+/* Bandeja del sistema (Tray) */
+#tray {
+    margin-right: 6px;
+    padding: 2px 8px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @border_subtle;
+}
