@@ -229,6 +229,9 @@ hl.bind(mainMod .. " + W",              hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C",              hl.dsp.exec_cmd(editor))
 hl.bind("CTRL + ALT + V",               hl.dsp.exec_cmd("pwvucontrol || pavucontrol"))
 
+-- --- Cambio de Idioma del Teclado (US <-> LATAM / ES con notificación en pantalla) ---
+hl.bind("SHIFT + RETURN", hl.dsp.exec_cmd(hypr_dir .. "/scripts/switch-kb.sh"))
+
 -- --- Lanzador, Portapapeles y Tema Dinámico (Wallpaper) ---
 hl.bind(mainMod .. " + SPACE",     hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + D",         hl.dsp.exec_cmd(menu))

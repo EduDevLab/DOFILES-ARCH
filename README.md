@@ -113,6 +113,8 @@ Put your static (`.png`, `.jpg`, `.jpeg`, `.webp`) or animated (`.gif`, `.mp4`, 
 | `SUPER + Q` | Close active window |
 | `SUPER + F` / `SUPER + ALT + F` | Fullscreen / Maximize |
 | `SUPER + ALT + SPACE` | Toggle floating window |
+| `SHIFT + RETURN` | **Switch keyboard layout** (US English ⇄ Latin American Spanish with on-screen notification) |
 | `SUPER + SHIFT + S` / `Print` | Screenshot region (clipboard / `~/Pictures/Screenshots`) |
 | `SUPER + SHIFT + R` | Reload Hyprland configuration |
+
 
