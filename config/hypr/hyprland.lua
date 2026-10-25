@@ -21,14 +21,8 @@ if not ok or type(colors) ~= "table" then
     }
 end
 
--- --- Monitores ---
-hl.monitor({
-    output   = "eDP-1",
-    mode     = "1920x1080@60",
-    position = "0x0",
-    scale    = 1,
-})
-
+-- --- Monitores (Auto-adaptable a cualquier resolución y tasa de refresco) ---
+-- Detecta automáticamente la resolución nativa, posición y máximo refresco (60Hz, 120Hz, 144Hz, 240Hz, 4K, 2K, Ultrawide)
 hl.monitor({
     output   = "",
     mode     = "preferred",
@@ -62,7 +56,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprctl setcursor GL-Kyle-Rayner 24")
 end)
 
--- --- Variables de Entorno ---
+-- --- Variables de Entorno (Compatibilidad Wayland + HiDPI Dinámico) ---
 hl.env("XCURSOR_THEME", "GL-Kyle-Rayner")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_THEME", "GL-Kyle-Rayner")
@@ -71,6 +65,8 @@ hl.env("GDK_BACKEND", "wayland,x11")
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("QT_ENABLE_HIGHDPI_SCALING", "1")
+hl.env("GDK_SCALE", "1")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
@@ -143,6 +139,10 @@ hl.config({
         disable_hyprland_logo    = true,
         disable_splash_rendering = true,
         vrr                      = 0,
+    },
+
+    xwayland = {
+        force_zero_scaling = true,
     },
 })
 
