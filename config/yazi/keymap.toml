@@ -6,3 +6,14 @@
 on   = "o"
 run  = "open --interactive"
 desc = "Abrir con selector de opciones (Neovim / VS Code)"
+
+[[mgr.prepend_keymap]]
+on   = "T"
+run  = "shell 'kitty --detach' --confirm"
+desc = "Abrir terminal Kitty en el directorio actual"
+
+[[mgr.prepend_keymap]]
+on   = "<C-t>"
+run  = "shell 'kitty --detach' --confirm"
+desc = "Abrir terminal Kitty en el directorio actual"
+

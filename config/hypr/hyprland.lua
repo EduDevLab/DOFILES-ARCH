@@ -167,6 +167,49 @@ hl.animation({ leaf = "border",      enabled = true, speed = 6,   bezier = "defa
 hl.animation({ leaf = "borderangle", enabled = true, speed = 25,  bezier = "linear",         style = "loop" })
 
 -- ==============================================================================
+-- WINDOW RULES (Reglas de Ventanas y Flotantes)
+-- ==============================================================================
+-- Suprimir peticiones automáticas de maximizado
+hl.window_rule({
+    name           = "suppress-maximize",
+    match          = { class = ".*" },
+    suppress_event = "maximize",
+})
+
+-- Terminal Kitty estándar: siempre en mosaico tileado respetando gaps
+hl.window_rule({
+    name       = "kitty-tiled",
+    match      = { class = "^kitty$" },
+    fullscreen = false,
+})
+
+-- Kitty Flotante Especial (SUPER + SHIFT + ENTER / SUPER + ALT + ENTER)
+hl.window_rule({
+    name   = "kitty-floating",
+    match  = { class = "^kitty-floating$" },
+    float  = true,
+    size   = "(monitor_w*0.7) (monitor_h*0.65)",
+    center = true,
+})
+
+-- Monitor de Sistema Btop Flotante (SUPER + ESC)
+hl.window_rule({
+    name   = "btop-floating",
+    match  = { class = "^btop-floating$" },
+    float  = true,
+    size   = "(monitor_w*0.75) (monitor_h*0.75)",
+    center = true,
+})
+
+-- Diálogos y controles de audio flotantes
+hl.window_rule({
+    name   = "audio-dialogs",
+    match  = { class = "pavucontrol|pwvucontrol|blueman-manager" },
+    float  = true,
+    center = true,
+})
+
+-- ==============================================================================
 -- KEYBINDINGS - MAPEO FIEL DE CAELESTIA + TEMA DINÁMICO
 -- ==============================================================================
 local mainMod = "SUPER"
@@ -176,12 +219,15 @@ local locked_repeating = { locked = true, repeating = true }
 local mouse            = { mouse = true }
 
 -- --- Aplicaciones Principales ---
-hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + T",      hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + E",      hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + W",      hl.dsp.exec_cmd(browser))
-hl.bind(mainMod .. " + C",      hl.dsp.exec_cmd(editor))
-hl.bind("CTRL + ALT + V",       hl.dsp.exec_cmd("pwvucontrol || pavucontrol"))
+hl.bind(mainMod .. " + RETURN",         hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + T",              hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + SHIFT + RETURN", hl.dsp.exec_cmd("kitty --class kitty-floating"))
+hl.bind(mainMod .. " + ALT + RETURN",   hl.dsp.exec_cmd("kitty --class kitty-floating"))
+hl.bind(mainMod .. " + Escape",         hl.dsp.exec_cmd("kitty --class btop-floating -e btop"))
+hl.bind(mainMod .. " + E",              hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + W",              hl.dsp.exec_cmd(browser))
+hl.bind(mainMod .. " + C",              hl.dsp.exec_cmd(editor))
+hl.bind("CTRL + ALT + V",               hl.dsp.exec_cmd("pwvucontrol || pavucontrol"))
 
 -- --- Lanzador, Portapapeles y Tema Dinámico (Wallpaper) ---
 hl.bind(mainMod .. " + SPACE",     hl.dsp.exec_cmd(menu))

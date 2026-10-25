@@ -100,8 +100,10 @@ Put your static (`.png`, `.jpg`, `.jpeg`, `.webp`) or animated (`.gif`, `.mp4`, 
 
 | Keybind | Action |
 | :--- | :--- |
-| `SUPER + RETURN` / `SUPER + T` | Open **Kitty** terminal |
-| `SUPER + E` | Open **Yazi** file manager |
+| `SUPER + RETURN` / `SUPER + T` | Open **Kitty** terminal (tiled, adjusts to screen layout) |
+| `SUPER + SHIFT + RETURN` / `SUPER + ALT + RETURN` | Open **Floating Kitty** terminal (centered floating popup) |
+| `SUPER + ESC` | Open **Btop** system monitor (floating window) |
+| `SUPER + E` | Open **Yazi** file manager (`T` / `Ctrl+T` inside Yazi opens terminal in cwd) |
 | `SUPER + C` | Open **Neovim** editor |
 | `SUPER + W` | Open **Chromium** browser |
 | `SUPER + SPACE` / `SUPER + D` | Open **Fuzzel** application launcher |
@@ -113,3 +115,4 @@ Put your static (`.png`, `.jpg`, `.jpeg`, `.webp`) or animated (`.gif`, `.mp4`, 
 | `SUPER + ALT + SPACE` | Toggle floating window |
 | `SUPER + SHIFT + S` / `Print` | Screenshot region (clipboard / `~/Pictures/Screenshots`) |
 | `SUPER + SHIFT + R` | Reload Hyprland configuration |
+
