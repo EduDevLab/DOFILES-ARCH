@@ -272,7 +272,6 @@ hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + K", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + J", hl.dsp.focus({ direction = "down" }))
 
@@ -318,6 +317,8 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   locked)
 hl.bind("Print",                   hl.dsp.exec_cmd([[mkdir -p ~/Pictures/Screenshots && grim -g "$(slurp)" ~/Pictures/Screenshots/Screenshot_$(date +%Y-%m-%d_%H-%M-%S).png]]))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | wl-copy]]))
 
--- --- Sesión y Recarga ---
+-- --- Sesión, Suspensión (SDDM) y Recarga ---
+hl.bind(mainMod .. " + L",         hl.dsp.exec_cmd(hypr_dir .. "/scripts/suspend-sddm.sh"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd(hypr_dir .. "/scripts/suspend-sddm.sh --lock-only"))
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("hyprctl reload"))
 hl.bind("CTRL + ALT + Delete",     hl.dsp.exit())

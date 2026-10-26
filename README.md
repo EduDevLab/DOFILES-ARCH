@@ -114,6 +114,8 @@ Put your static (`.png`, `.jpg`, `.jpeg`, `.webp`) or animated (`.gif`, `.mp4`, 
 | `SUPER + F` / `SUPER + ALT + F` | Fullscreen / Maximize |
 | `SUPER + ALT + SPACE` | Toggle floating window |
 | `SHIFT + RETURN` | **Switch keyboard layout** (US English ⇄ Latin American Spanish with on-screen notification) |
+| `SUPER + L` | **Suspend & Lock to SDDM** (returns to SDDM login screen & suspends PC; restores session on login) |
+| `SUPER + SHIFT + L` | **Lock to SDDM** (switches to SDDM login screen without suspending) |
 | `SUPER + SHIFT + S` / `Print` | Screenshot region (clipboard / `~/Pictures/Screenshots`) |
 | `SUPER + SHIFT + R` | Reload Hyprland configuration |
 
